@@ -84,8 +84,10 @@ class MesherInterferenceCommand(Fusion360CommandBase):
         root_comp = ao.root_comp
         graphics_group = root_comp.customGraphicsGroups.add()
 
-        boundary_graphics = draw_points(boundary_nodes, './resources/green_dot.png', graphics_group)
-        contained_graphics = draw_points(contained_nodes, './resources/red_dot.png', graphics_group)
+        if (len(boundary_nodes)):
+            boundary_graphics = draw_points(boundary_nodes, './resources/green_dot.png', graphics_group)
+        if (len(contained_nodes)):
+            contained_graphics = draw_points(contained_nodes, './resources/red_dot.png', graphics_group)
 
         for body in brep_bodies:
             body.opacity = .2
