@@ -8,7 +8,7 @@ from .Fusion360Utilities.Fusion360CommandBase import Fusion360CommandBase
 
 def mesh_brep_interference(mesh_body: adsk.fusion.MeshBody, brep_bodies: adsk.fusion.BRepBodies):
 
-    nodes = mesh_body.mesh.nodeCoordinates
+    nodes = mesh_body.displayMesh.nodeCoordinates
 
     contained_nodes = []
     boundary_nodes = []
